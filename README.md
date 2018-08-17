@@ -2,6 +2,11 @@
 
 API wrapper for [WorldTides.info](https://www.worldtides.info) on [Node.js](https://nodejs.org) (unofficial)
 
+[![npm](https://img.shields.io/npm/v/worldtides?maxAge=3600)](https://github.com/fvdm/nodejs-worldtides/blob/master/CHANGELOG.md)
+[![Build Status](https://travis-ci.org/fvdm/nodejs-worldtides?branch=master)](https://travis-ci.org/fvdm/nodejs-worldtides/branches)
+[![Coverage Status](https://coveralls.io/repos/github/fvdm/nodejs-worldtides/badge.svg?branch=master)](https://coveralls.io/github/fvdm/nodejs-worldtides?branch=master)
+[![Greenkeeper badge](https://badges.greenkeeper.io/fvdm/nodejs-worldtides)](https://greenkeeper.io/)
+
 
 ## Example
 

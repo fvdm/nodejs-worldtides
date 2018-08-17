@@ -1,0 +1,40 @@
+{
+  "name": "worldtides",
+  "version": "0.1.0",
+  "description": "API wrapper for WorldTides.info (unofficial)",
+  "author": {
+    "name": "Franklin van de Meent",
+    "email": "fr@nkl.in",
+    "url": "https://frankl.in"
+  },
+  "license": "Unlicense",
+  "homepage": "https://github.com/fvdm/nodejs-worldtides#readme",
+  "main": "index.js",
+  "tonicExampleFilename": "example.js",
+  "scripts": {
+    "test": "dotest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fvdm/nodejs-worldtides.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fvdm/nodejs-worldtides/issues"
+  },
+  "keywords": [
+    "api",
+    "coast",
+    "environment",
+    "geolocation",
+    "ocean",
+    "sealevel",
+    "tides",
+    "worldtides"
+  ],
+  "dependencies": {
+    "httpreq": "^0.4.24"
+  },
+  "devDependencies": {
+    "dotest": "^2.5.0"
+  }
+}

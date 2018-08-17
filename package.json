@@ -11,6 +11,9 @@
   "homepage": "https://github.com/fvdm/nodejs-worldtides#readme",
   "main": "index.js",
   "tonicExampleFilename": "example.js",
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
     "test": "dotest"
   },

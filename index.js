@@ -55,7 +55,7 @@ function talk (parameters={}) {
           resolve (data);
         }
       })
-      .catch (console.log)
+      .catch (reject)
     ;
   });
 }

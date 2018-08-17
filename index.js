@@ -27,7 +27,7 @@ let config = {};
  * @Promise  {error}    reject      Client or API error
  */
 
-function talk (parameters={}) {
+function talk (parameters = {}) {
   const options = {
     url: 'https://www.worldtides.info/api',
     method: 'POST',

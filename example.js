@@ -10,6 +10,8 @@
  * API documentation:  <https://www.worldtides.info/apidocs>
  */
 
+/* eslint-disable */
+
 const tides = require ('worldtides') ({
   key: 'abc123',
 });

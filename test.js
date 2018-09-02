@@ -2,7 +2,7 @@ const dotest = require ('dotest');
 const pkg = require ('./');
 
 const config = {
-  key: 'b1ccf130-63cc-4e1c-9f23-810db3a854d1',
+  key: String (process.env.key),
   origin: String (process.env.origin),
   timeout: parseInt (process.env.timeout, 10),
 };

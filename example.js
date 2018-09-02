@@ -20,7 +20,6 @@ const tides = require ('worldtides') ({
 // Get tide extremes for the next 2 weeks (3 credits)
 tides ({
   extremes: '',
-  correctedConstituents: '',
   length: 1209600,
   stationDistance: 15,
   lat: 52.381158,

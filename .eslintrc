@@ -37,6 +37,7 @@
     "guard-for-in": 0,
     "handle-callback-err": [2, "^(e|er|err|error)[0-9]{1,2}?$"],
     "indent": [2, 2, {
+      "MemberExpression": 0,
       "SwitchCase": 1
     }],
     "keyword-spacing": 2,

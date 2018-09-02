@@ -43,20 +43,19 @@ function talk (parameters = {}) {
 
   return new Promise ((resolve, reject) => {
     doRequest (options)
-      .then (res => JSON.parse (res.body))
-      .then (data => {
-        let error;
+    .then (res => JSON.parse (res.body))
+    .then (data => {
+      let error;
 
-        if (data.error) {
-          error = new Error (data.error);
-          error.statusCode = data.status;
-          reject (error);
-        } else {
-          resolve (data);
-        }
-      })
-      .catch (reject)
-    ;
+      if (data.error) {
+        error = new Error (data.error);
+        error.statusCode = data.status;
+        reject (error);
+      } else {
+        resolve (data);
+      }
+    })
+    .catch (reject);
   });
 }
 

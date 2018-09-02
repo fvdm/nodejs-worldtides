@@ -25,13 +25,12 @@ tides ({
   lat: 52.381158,
   lon: 4.4837275,
 })
-  .then (data => {
-    data.extremes.forEach (itm => {
-      console.log (`${itm.date} - ${itm.type}`);
-    });
-  })
-  .catch (console.error)
-;
+.then (data => {
+  data.extremes.forEach (itm => {
+    console.log (`${itm.date} - ${itm.type}`);
+  });
+})
+.catch (console.error);
 ```
 
 
@@ -81,13 +80,12 @@ const params = {
 };
 
 tides (params)
-  .then (data => {
-    data.extremes.forEach (itm => {
-      console.log (`${itm.date} - ${itm.type}`);
-    });
-  })
-  .catch (console.error)
-;
+.then (data => {
+  data.extremes.forEach (itm => {
+    console.log (`${itm.date} - ${itm.type}`);
+  });
+})
+.catch (console.error);
 ```
 
 

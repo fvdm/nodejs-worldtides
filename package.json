@@ -38,7 +38,7 @@
     "worldtides"
   ],
   "dependencies": {
-    "httpreq": "^0.4.24"
+    "httpreq": "^0.5.1"
   },
   "devDependencies": {
     "dotest": "^2.5.0"

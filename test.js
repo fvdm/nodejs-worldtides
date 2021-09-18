@@ -1,10 +1,10 @@
 const dotest = require ('dotest');
-const pkg = require ('./');
+const app = require ('./');
 
 const config = {
-  key: String (process.env.key),
-  origin: String (process.env.origin),
-  timeout: parseInt (process.env.timeout, 10),
+  key: String (process.env.KEY),
+  origin: String (process.env.ORIGIN),
+  timeout: String (process.env.TIMEOUT),
 };
 
 const params = {
@@ -14,61 +14,54 @@ const params = {
   lon: 4.4837275,
 };
 
-const app = pkg && pkg (config);
-
 
 dotest.add ('Interface', test => {
   test()
-  .isFunction ('fail', 'pkg', pkg)
-  .isFunction ('fail', 'app', app)
-  .done();
+    .isFunction ('fail', 'exports', app)
+    .done()
+  ;
 });
 
 
-dotest.add ('Communication', test => {
-  app (params)
-  .then (test.info)
-  .then (data => {
-    test()
+dotest.add ('Communication', async test => {
+  let error;
+  let data;
+
+  try {
+    data = await app ({
+      ...config,
+      ...params,
+    });
+  }
+  catch (err) {
+    error = err;
+  }
+
+  test (error)
     .isObject ('fail', 'data', data)
-    .isUndefined ('fail', 'data.error', data && data.error)
-    .isArray ('fail', 'data.extremes', data && data.extremes)
-    .isNotEmpty ('fail', 'data.extremes', data && data.extremes)
-    .done();
-  })
-  .catch (test);
+    .isNotEmpty ('fail', 'data', data)
+    .done()
+  ;
 });
 
 
-dotest.add ('Error handling: API error', test => {
-  app ({})
-  .then (data => {
-    test()
-    .isUndefined ('fail', 'data', data)
-    .done();
-  })
-  .catch (err => {
-    test()
+dotest.add ('API error', async test => {
+  let error;
+  let data;
+
+  try {
+    data = await app (params);
+  }
+  catch (err) {
+    error = err;
+  }
+
+  test()
     .isError ('fail', 'err', err)
     .isNotEmpty ('fail', 'err.message', err && err.message)
-    .isNumber ('fail', 'err.statusCode', err && err.statusCode)
-    .done();
-  });
-});
-
-
-dotest.add ('Error handling: Client error', test => {
-  app ()
-  .then (data => {
-    test()
     .isUndefined ('fail', 'data', data)
-    .done();
-  })
-  .catch (err => {
-    test()
-    .isError ('fail', 'err', err)
-    .isNotEmpty ('fail', 'err.message', err && err.message)
-    .done();
+    .done()
+  ;
   });
 });
 

@@ -3,21 +3,19 @@
 API wrapper for [WorldTides.info](https://www.worldtides.info) on [Node.js](https://nodejs.org) (unofficial)
 
 [![npm](https://img.shields.io/npm/v/worldtides.svg?maxAge=3600)](https://github.com/fvdm/nodejs-worldtides/blob/master/CHANGELOG.md)
-[![Build Status](https://travis-ci.org/fvdm/nodejs-worldtides.svg?branch=master)](https://travis-ci.org/fvdm/nodejs-worldtides/branches)
+[![Build Status](https://github.com/fvdm/nodejs-worldtides/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/fvdm/nodejs-worldtides/actions/workflows/node.js.yml)
 [![Coverage Status](https://coveralls.io/repos/github/fvdm/nodejs-worldtides/badge.svg?branch=master)](https://coveralls.io/github/fvdm/nodejs-worldtides?branch=master)
-[![Greenkeeper badge](https://badges.greenkeeper.io/fvdm/nodejs-worldtides.svg)](https://greenkeeper.io/)
 
 
 ## Example
 
 ```js
-const tides = require ('worldtides') ({
-  key: 'abc123',
-});
+const tides = require ('worldtides');
 
 
 // Get tide extremes for the next 2 weeks (3 credits)
 tides ({
+  key: 'abc123',
   extremes: '',
   length: 1209600,
   stationDistance: 15,
@@ -40,8 +38,8 @@ tides ({
 
 ## Configuration
 
-The package exports a function where you set the config params.
-It returns the communication function.
+You can add the configuration params in the same arguments
+object as the API request method.
 
 ```js
 const tides = require ('worldtides') ({
@@ -52,16 +50,14 @@ const tides = require ('worldtides') ({
 
 ##### Parameters
 
-param   | type   | required | default   | description
-:-------|:-------|:---------|:----------|:-----------
-key     | string | yes      |           | API key
-origin  | string | no       | no-origin | Origin on allow list
-timeout | int    | no       | 5000      | Request time out in ms
+param     | type   | default   | description
+:---------|:-------|:----------|:-----------
+key       | string | API key
+[origin]  | string | no-origin | Origin on allow list
+[timeout] | int    | 5000      | Request time out in ms
 
 
 ## Usage
-
-The configuration function returns the function you use for communication with the API.
 
 You provide the parameters in an `object` and it returns a `Promise`.
 See the [API documentation](https://www.worldtides.info/apidocs) for details.
@@ -79,12 +75,13 @@ const params = {
 };
 
 tides (params)
-.then (data => {
-  data.extremes.forEach (itm => {
-    console.log (`${itm.date} - ${itm.type}`);
-  });
-})
-.catch (console.error);
+  .then (data => {
+    data.extremes.forEach (itm => {
+      console.log (`${itm.date} - ${itm.type}`);
+    });
+  })
+  .catch (console.error)
+;
 ```
 
 
@@ -113,9 +110,10 @@ OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-For more information, please refer to <http://unlicense.org>
+For more information, please refer to <https://unlicense.org>
 
 
 ## Author
 
-[Franklin van de Meent](https://frankl.in)
+[Franklin](https://fvdm.com)
+| [Buy me a coffee](https://fvdm.com/donating)

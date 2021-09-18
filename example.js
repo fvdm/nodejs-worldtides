@@ -1,24 +1,16 @@
-/**
- * Name:               worldtides - example.js
- * Description:        Example on how to use the worldtides package
- * Author:             Franklin van de Meent <https://frankl.in>
- * License:            Unlicense (public domain, see LICENSE file)
- *
- * Source & docs:      <https://github.com/fvdm/nodejs-worldtides>
- * Feedback & issues:  <https://github.com/fvdm/nodejs-worldtides/issues>
- *
- * API documentation:  <https://www.worldtides.info/apidocs>
- */
+/*
+Source & docs:      <https://github.com/fvdm/nodejs-worldtides>
+API documentation:  <https://www.worldtides.info/apidocs>
+*/
 
 /* eslint-disable */
 
-const tides = require ('worldtides') ({
-  key: 'abc123',
-});
+const tides = require ('worldtides');
 
 
 // Get tide extremes for the next 2 weeks (3 credits)
 tides ({
+  key: 'abc123',
   extremes: '',
   length: 1209600,
   stationDistance: 15,

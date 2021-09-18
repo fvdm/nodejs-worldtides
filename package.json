@@ -3,9 +3,9 @@
   "version": "1.0.2",
   "description": "API wrapper for WorldTides.info (unofficial)",
   "author": {
-    "name": "Franklin van de Meent",
-    "email": "fr@nkl.in",
-    "url": "https://frankl.in"
+    "name": "Franklin",
+    "email": "info@fvdm.com",
+    "url": "https://fvdm.com"
   },
   "license": "Unlicense",
   "homepage": "https://github.com/fvdm/nodejs-worldtides#readme",
@@ -38,9 +38,9 @@
     "worldtides"
   ],
   "dependencies": {
-    "httpreq": "^0.4.24"
+    "httpreq": "^0.5.1"
   },
   "devDependencies": {
-    "dotest": "^2.5.0"
+    "dotest": "^2.9.0"
   }
 }

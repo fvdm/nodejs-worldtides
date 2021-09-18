@@ -29,7 +29,9 @@ dotest.add ('Communication', async test => {
 
   try {
     data = await app ({
-      ...config,
+      key: config.key,
+      origin: config.origin,
+      timeout: config.timeout,
       ...params,
     });
   }

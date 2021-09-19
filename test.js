@@ -14,6 +14,11 @@ const params = {
   lon: 4.4837275,
 };
 
+const combined = {
+  ...config,
+  ...params,
+};
+
 
 dotest.add ('Interface', test => {
   test()
@@ -28,12 +33,7 @@ dotest.add ('Communication', async test => {
   let data;
 
   try {
-    data = await app ({
-      key: config.key,
-      origin: config.origin,
-      timeout: config.timeout,
-      ...params,
-    });
+    data = await app (combined);
   }
   catch (err) {
     error = err;

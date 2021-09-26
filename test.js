@@ -2,9 +2,9 @@ const dotest = require ('dotest');
 const app = require ('./');
 
 const config = {
-  key: String (process.env.KEY),
-  origin: String (process.env.ORIGIN),
-  timeout: String (process.env.TIMEOUT),
+  key: process.env.KEY || '',
+  origin: process.env.ORIGIN || '',
+  timeout: process.env.TIMEOUT || '',
 };
 
 const params = {

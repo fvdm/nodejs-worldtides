@@ -25,7 +25,7 @@ module.exports = async function ({
   key,
   origin = 'no-origin',
   timeout = 5000,
-}) => {
+}) {
   delete arguments[0].origin;
   delete arguments[0].timeout;
 

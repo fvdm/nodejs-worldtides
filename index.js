@@ -21,7 +21,7 @@ const { doRequest } = require ('httpreq');
  * @return  {Promise<object>}
  */
 
-module.exports = async ({
+module.exports = async function ({
   key,
   origin = 'no-origin',
   timeout = 5000,

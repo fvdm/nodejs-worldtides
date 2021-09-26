@@ -54,8 +54,8 @@ dotest.add ('API error', async test => {
   }
 
   test()
-    .isError ('fail', 'err', err)
-    .isNotEmpty ('fail', 'err.message', err && err.message)
+    .isError ('fail', 'err', error)
+    .isNotEmpty ('fail', 'err.message', error && error.message)
     .isUndefined ('fail', 'data', data)
     .done()
   ;

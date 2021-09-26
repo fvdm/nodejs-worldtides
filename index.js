@@ -21,11 +21,11 @@ const { doRequest } = require ('httpreq');
  * @return  {Promise<object>}
  */
 
-module.exports = async function talk ({
+module.exports = async ({
   key,
   origin = 'no-origin',
   timeout = 5000,
-}) {
+}) => {
   delete arguments[0].origin;
   delete arguments[0].timeout;
 

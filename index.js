@@ -26,13 +26,17 @@ module.exports = async function ({
   origin = 'no-origin',
   timeout = 5000,
 }) {
+  delete arguments[0].key;
   delete arguments[0].origin;
   delete arguments[0].timeout;
 
   const options = {
     url: 'https://www.worldtides.info/api',
     method: 'POST',
-    parameters: arguments[0],
+    parameters: {
+      key,
+      ...arguments[0],
+    },
     timeout,
     headers: {
       'Origin': origin,

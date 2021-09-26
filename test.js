@@ -64,7 +64,6 @@ dotest.add ('API error', async test => {
     .isUndefined ('fail', 'data', data)
     .done()
   ;
-  });
 });
 
 

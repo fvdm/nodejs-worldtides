@@ -20,6 +20,8 @@ const { doRequest } = require ('httpreq');
  */
 
 async function fixDate (date, type) {
+  let str;
+
   if (!date) {
     return '';
   }
@@ -34,17 +36,20 @@ async function fixDate (date, type) {
 
   switch (type) {
     case 'unix':
-      return Math.floor (date.getTime() / 1000);
+      str = Math.floor (date.getTime() / 1000);
       break;
 
     case 'long':
-      return date.toISOString();
+      str = date.toISOString();
       break;
 
     case 'short':
-      return date.toISOString().split ('T')[0];
+    default:
+      str = date.toISOString().split ('T')[0];
       break;
   }
+
+  return str;
 }
 
 

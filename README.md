@@ -7,11 +7,18 @@ API wrapper for [WorldTides.info](https://www.worldtides.info) on [Node.js](http
 [![Coverage Status](https://coveralls.io/repos/github/fvdm/nodejs-worldtides/badge.svg?branch=master)](https://coveralls.io/github/fvdm/nodejs-worldtides?branch=master)
 
 
-## Example
+## Usage
+
+You provide the parameters in an _object_ and it returns a _Promise_.
+
+When a parameter only needs to be 'present' you still need to give it a value,
+like an empty string `''` or `true`, it can be anything.
+
+See the [**API documentation**](https://www.worldtides.info/apidocs) for details.
+
 
 ```js
 const tides = require ('worldtides');
-
 
 // Get tide extremes for the next 2 weeks (3 credits)
 tides ({
@@ -55,35 +62,6 @@ param     | type   | default   | description
 key       | string | API key
 [origin]  | string | no-origin | Origin on allow list
 [timeout] | int    | 5000      | Request time out in ms
-
-
-## Usage
-
-You provide the parameters in an `object` and it returns a `Promise`.
-See the [API documentation](https://www.worldtides.info/apidocs) for details.
-
-When a parameter only needs to be 'present' you still need to give it a value,
-like an empty string `''` or `true`, it can be anything.
-
-
-```js
-const params = {
-  key: 'abc123',
-  extremes: '',
-  stationDistance: 15,
-  lat: 52.381158,
-  lon: 4.4837275,
-};
-
-tides (params)
-  .then (data => {
-    data.extremes.forEach (itm => {
-      console.log (`${itm.date} - ${itm.type}`);
-    });
-  })
-  .catch (console.error)
-;
-```
 
 
 ## Unlicense

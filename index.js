@@ -69,7 +69,7 @@ module.exports = async function ({
     },
   };
 
-  options.parameters = fixDates (options.parameters);
+  options.parameters = await fixDates (options.parameters);
 
   const res = await doRequest (options);
   const data = JSON.parse (res.body);

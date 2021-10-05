@@ -11,45 +11,27 @@ const { doRequest } = require ('httpreq');
 
 
 /**
- * Convert a date to a string
+ * Convert dates to formatted strings
  *
- * @param   {Date|string}  [date]  Date to convert
- * @param   {string}       type    Return a long ISO string
+ * @param   {object}  p  Request parameters
  *
  * @return  {string}
  */
 
-async function fixDate (date, type) {
-  let str;
-
-  if (!date) {
-    return '';
+async function fixDates (p) {
+  if (p.date && p.date !== 'today') {
+    p.date = new Date (p.date).toISOString().split ('T')[0];
   }
 
-  if (date === 'today') {
-    return date;
+  if (p.localtime) {
+    p.localtime = new Date (p.localtime).toISOString();
   }
 
-  if (typeof date === 'string') {
-    date = new Date (date);
+  if (p.start && typeof p.start !== 'number') {
+    p.start = Math,floor (new Date (p.start).getTime() / 1000);
   }
 
-  switch (type) {
-    case 'unix':
-      str = Math.floor (date.getTime() / 1000);
-      break;
-
-    case 'long':
-      str = date.toISOString();
-      break;
-
-    case 'short':
-    default:
-      str = date.toISOString().split ('T')[0];
-      break;
-  }
-
-  return str;
+  return p;
 }
 
 
@@ -81,7 +63,7 @@ module.exports = async function ({
     method: 'POST',
     parameters: {
       key,
-      ...arguments[0],
+      ...fixDates (arguments[0]),
     },
     timeout,
     headers: {
@@ -89,10 +71,6 @@ module.exports = async function ({
       'User-Agent': 'nodejs-worldtides',
     },
   };
-
-  options.parameters.date = fixDate (date, 'short');
-  options.parameters.start = fixDate (start, 'unix');
-  options.parameters.localtime = fixDate (localtime, 'long');
 
   const res = await doRequest (options);
   const data = JSON.parse (res.body);

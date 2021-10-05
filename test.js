@@ -62,7 +62,7 @@ dotest.add ('API error', async test => {
 });
 
 
-dotest.add ('date: today', aaync test => {
+dotest.add ('date: today', async test => {
   let error;
   let data;
 
@@ -85,7 +85,7 @@ dotest.add ('date: today', aaync test => {
 });
 
 
-dotest.add ('date: short', aaync test => {
+dotest.add ('date: short', async test => {
   let error;
   let data;
 
@@ -108,7 +108,7 @@ dotest.add ('date: short', aaync test => {
 });
 
 
-dotest.add ('date: long', aaync test => {
+dotest.add ('date: long', async test => {
   let error;
   let data;
 
@@ -131,7 +131,7 @@ dotest.add ('date: long', aaync test => {
 });
 
 
-dotest.add ('date: unix', aaync test => {
+dotest.add ('date: unix', async test => {
   let error;
   let data;
 

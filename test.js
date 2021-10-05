@@ -62,4 +62,96 @@ dotest.add ('API error', async test => {
 });
 
 
+dotest.add ('date: today', aaync test => {
+  let error;
+  let data;
+
+  try {
+    data = await app ({
+      ...config,
+      ...params,
+      date: 'today',
+    });
+  }
+  catch (err) {
+    error = err;
+  }
+
+  test (error)
+    .isObject ('fail', 'data', data)
+    .isNotEmpty ('fail', 'data', data)
+    .done()
+  ;
+});
+
+
+dotest.add ('date: short', aaync test => {
+  let error;
+  let data;
+
+  try {
+    data = await app ({
+      ...config,
+      ...params,
+      date: '2021-10-01 12:34',
+    });
+  }
+  catch (err) {
+    error = err;
+  }
+
+  test (error)
+    .isObject ('fail', 'data', data)
+    .isNotEmpty ('fail', 'data', data)
+    .done()
+  ;
+});
+
+
+dotest.add ('date: long', aaync test => {
+  let error;
+  let data;
+
+  try {
+    data = await app ({
+      ...config,
+      ...params,
+      localtime: new Date ('2020-10-01 12:34'),
+    });
+  }
+  catch (err) {
+    error = err;
+  }
+
+  test (error)
+    .isObject ('fail', 'data', data)
+    .isNotEmpty ('fail', 'data', data)
+    .done()
+  ;
+});
+
+
+dotest.add ('date: unix', aaync test => {
+  let error;
+  let data;
+
+  try {
+    data = await app ({
+      ...config,
+      ...params,
+      start: new Date(),
+    });
+  }
+  catch (err) {
+    error = err;
+  }
+
+  test (error)
+    .isObject ('fail', 'data', data)
+    .isNotEmpty ('fail', 'data', data)
+    .done()
+  ;
+});
+
+
 dotest.run ();

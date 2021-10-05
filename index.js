@@ -60,7 +60,7 @@ module.exports = async function ({
     method: 'POST',
     parameters: {
       key,
-      ...fixDates (arguments[0]),
+      ...arguments[0],
     },
     timeout,
     headers: {
@@ -69,7 +69,7 @@ module.exports = async function ({
     },
   };
 
-  console.log (options);
+  options.parameters = fixDates (options.parameters);
 
   const res = await doRequest (options);
   const data = JSON.parse (res.body);

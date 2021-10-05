@@ -28,7 +28,7 @@ async function fixDates (p) {
   }
 
   if (p.start && typeof p.start !== 'number') {
-    p.start = Math,floor (new Date (p.start).getTime() / 1000);
+    p.start = Math.floor (new Date (p.start).getTime() / 1000);
   }
 
   return p;
@@ -50,9 +50,6 @@ module.exports = async function ({
   key,
   origin = 'no-origin',
   timeout = 5000,
-  date = '',
-  start = '',
-  localtime = '',
 }) {
   delete arguments[0].key;
   delete arguments[0].origin;

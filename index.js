@@ -52,6 +52,7 @@ module.exports = async function ({
   delete arguments[0].origin;
   delete arguments[0].timeout;
 
+  // Process request
   const options = {
     url: 'https://www.worldtides.info/api/v2',
     method: 'POST',
@@ -68,9 +69,11 @@ module.exports = async function ({
   const res = await doRequest (options);
   const data = JSON.parse (res.body);
 
+  // API error
   if (data.error) {
     throw new Error (data.error);
   }
 
+  // Success
   return data;
 };

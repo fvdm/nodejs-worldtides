@@ -69,6 +69,8 @@ module.exports = async function ({
     },
   };
 
+  console.log (options);
+
   const res = await doRequest (options);
   const data = JSON.parse (res.body);
 

@@ -55,13 +55,13 @@ const tides = require ('worldtides') ({
 });
 ```
 
-##### Parameters
+### Parameters
 
-param     | type   | default   | description
-:---------|:-------|:----------|:-----------
-key       | string | API key
-[origin]  | string | no-origin | Origin on allow list
-[timeout] | int    | 5000      | Request time out in ms
+param     | type   | default     | description
+:---------|:-------|:------------|:-----------
+key       | string |             | API key
+[origin]  | string | `no-origin` | Origin on allow list
+[timeout] | number | `5000`      | Request time out in ms
 
 
 ## Unlicense

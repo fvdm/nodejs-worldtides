@@ -31,7 +31,7 @@ module.exports = async function ({
   delete arguments[0].timeout;
 
   const options = {
-    url: 'https://www.worldtides.info/api',
+    url: 'https://www.worldtides.info/api/v2',
     method: 'POST',
     parameters: {
       key,

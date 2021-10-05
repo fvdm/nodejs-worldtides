@@ -17,9 +17,6 @@ tides ({
   lat: 52.381158,
   lon: 4.4837275,
 })
-.then (data => {
-  data.extremes.forEach (itm => {
-    console.log (`${itm.date} - ${itm.type}`);
-  });
-})
+.then (data => data.extremes)
+.then (console.table)
 .catch (console.error);

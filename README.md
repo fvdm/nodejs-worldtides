@@ -68,6 +68,7 @@ like an empty string `''` or `true`, it can be anything.
 
 ```js
 const params = {
+  key: 'abc123',
   extremes: '',
   stationDistance: 15,
   lat: 52.381158,

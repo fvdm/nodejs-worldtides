@@ -51,9 +51,12 @@ You can add the configuration params in the same arguments
 object as the API request method.
 
 ```js
-const tides = require ('worldtides') ({
+const tides = require ('worldtides');
+
+tides ({
   key: 'abc123',
   timeout: 5000,
+  ...params,
 });
 ```
 

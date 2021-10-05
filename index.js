@@ -39,7 +39,6 @@ async function fixDates (p) {
  * Communicate with the API
  *
  * @param   {object}  params                     Method parameters
- * @param   {string}  params.key                 API key
  * @param   {string}  [params.origin=no-origin]  CORS origin
  * @param   {number}  [params.timeout=5000]      Request timeout in ms
  *
@@ -47,11 +46,9 @@ async function fixDates (p) {
  */
 
 module.exports = async function ({
-  key,
   origin = 'no-origin',
   timeout = 5000,
 }) {
-  delete arguments[0].key;
   delete arguments[0].origin;
   delete arguments[0].timeout;
 
@@ -59,7 +56,6 @@ module.exports = async function ({
     url: 'https://www.worldtides.info/api/v2',
     method: 'POST',
     parameters: {
-      key,
       ...arguments[0],
     },
     timeout,

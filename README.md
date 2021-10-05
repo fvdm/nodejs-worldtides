@@ -61,7 +61,6 @@ tides ({
 
 param     | type   | default     | description
 :---------|:-------|:------------|:-----------
-key       | string |             | API key
 [origin]  | string | `no-origin` | Origin on allow list
 [timeout] | number | `5000`      | Request time out in ms
 

@@ -55,9 +55,7 @@ module.exports = async function ({
   const options = {
     url: 'https://www.worldtides.info/api/v2',
     method: 'POST',
-    parameters: {
-      ...arguments[0],
-    },
+    parameters: arguments[0],
     timeout,
     headers: {
       'Origin': origin,

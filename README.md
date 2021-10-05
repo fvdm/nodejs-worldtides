@@ -14,6 +14,8 @@ You provide the parameters in an _object_ and it returns a _Promise_.
 When a parameter only needs to be 'present' you still need to give it a value,
 like an empty string `''` or `true`, it can be anything.
 
+The `date`, `localtime` and `start` params are auto formatted from strings and Date.
+
 See the [**API documentation**](https://www.worldtides.info/apidocs) for details.
 
 

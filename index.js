@@ -24,7 +24,7 @@ async function fixDate (date, type) {
     return '';
   }
 
-  if (date === 'today' {
+  if (date === 'today') {
     return date;
   }
 

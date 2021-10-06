@@ -10,7 +10,7 @@
   "license": "Unlicense",
   "homepage": "https://github.com/fvdm/nodejs-worldtides#readme",
   "main": "index.js",
-  "tonicExampleFilename": "example.js",
+  "runkitExampleFilename": "example.js",
   "engines": {
     "node": ">=8"
   },

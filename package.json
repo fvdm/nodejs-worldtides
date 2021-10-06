@@ -12,7 +12,7 @@
   "main": "index.js",
   "runkitExampleFilename": "example.js",
   "engines": {
-    "node": ">=8"
+    "node": ">=12"
   },
   "files": [
     "example.js"

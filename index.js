@@ -11,31 +11,6 @@ const { doRequest } = require ('httpreq');
 
 
 /**
- * Convert dates to formatted strings
- *
- * @param   {object}  p  Request parameters
- *
- * @return  {string}
- */
-
-async function fixDates (p) {
-  if (p.date && p.date !== 'today') {
-    p.date = new Date (p.date).toISOString().split ('T')[0];
-  }
-
-  if (p.localtime) {
-    p.localtime = new Date (p.localtime).toISOString();
-  }
-
-  if (p.start && typeof p.start !== 'number') {
-    p.start = Math.floor (new Date (p.start).getTime() / 1000);
-  }
-
-  return p;
-}
-
-
-/**
  * Communicate with the API
  *
  * @param   {object}  params                     Method parameters
@@ -52,6 +27,19 @@ module.exports = async function ({
   delete arguments[0].origin;
   delete arguments[0].timeout;
 
+  // Fix dates
+  if (arguments[0].date && arguments[0].date !== 'today') {
+    arguments[0].date = new Date (arguments[0].date).toISOString().split ('T')[0];
+  }
+
+  if (arguments[0].localtime) {
+    arguments[0].localtime = new Date (arguments[0].localtime).toISOString();
+  }
+
+  if (arguments[0].start && typeof arguments[0].start !== 'number') {
+    arguments[0].start = Math.floor (new Date (arguments[0].start).getTime() / 1000);
+  }
+
   // Process request
   const options = {
     url: 'https://www.worldtides.info/api/v2',
@@ -63,8 +51,6 @@ module.exports = async function ({
       'User-Agent': 'nodejs-worldtides',
     },
   };
-
-  options.parameters = await fixDates (options.parameters);
 
   const res = await doRequest (options);
   const data = JSON.parse (res.body);

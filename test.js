@@ -28,7 +28,10 @@ dotest.add ('Communication', async test => {
   let data;
 
   try {
-    data = await app ({ ...config, ...params });
+    data = await app ({
+      ...config,
+      ...params,
+    });
   }
   catch (err) {
     error = err;

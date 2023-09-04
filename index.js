@@ -7,8 +7,6 @@
  * API documentation:  <https://www.worldtides.info/apidocs>
  */
 
-const { doRequest } = require ('httpreq');
-
 
 /**
  * Communicate with the API
@@ -41,19 +39,19 @@ module.exports = async function ({
   }
 
   // Process request
+  const params = new URLSearchParams (arguments[0]); 
+  let url = 'https://www.worldtides.info/api/v2?' + params;
   const options = {
-    url: 'https://www.worldtides.info/api/v2',
     method: 'POST',
-    parameters: arguments[0],
-    timeout,
+    signal: AbortSignal.timeout (timeout),
     headers: {
       'Origin': origin,
       'User-Agent': 'nodejs-worldtides',
     },
   };
 
-  const res = await doRequest (options);
-  const data = JSON.parse (res.body);
+  const res = await fetch (url, options);
+  const data = await res.json();
 
   // API error
   if (data.error) {

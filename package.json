@@ -12,7 +12,7 @@
   "main": "index.js",
   "runkitExampleFilename": "example.js",
   "engines": {
-    "node": ">=12"
+    "node": ">=18"
   },
   "files": [
     "example.js"
@@ -37,9 +37,7 @@
     "tides",
     "worldtides"
   ],
-  "dependencies": {
-    "httpreq": "^0.5.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "dotest": "^2.10.0"
   }

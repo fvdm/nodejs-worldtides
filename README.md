@@ -2,7 +2,7 @@
 
 API wrapper for [WorldTides.info](https://www.worldtides.info) on [Node.js](https://nodejs.org) (unofficial)
 
-[![npm](https://img.shields.io/npm/v/worldtides.svg?maxAge=3600)](https://github.com/fvdm/nodejs-worldtides/blob/master/CHANGELOG.md)
+[![npm](https://img.shields.io/npm/v/worldtides.svg?maxAge=3600)](https://github.com/fvdm/nodejs-worldtides/releases)
 [![Build Status](https://github.com/fvdm/nodejs-worldtides/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/fvdm/nodejs-worldtides/actions/workflows/node.js.yml)
 [![Coverage Status](https://coveralls.io/repos/github/fvdm/nodejs-worldtides/badge.svg?branch=master)](https://coveralls.io/github/fvdm/nodejs-worldtides?branch=master)
 

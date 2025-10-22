@@ -1,7 +1,7 @@
 /**
  * Name:               worldtides - index.js
  * Description:        API wrapper for WorldTides.info on Node.js (unofficial)
- * Author:             Franklin <https://fvdm.com>
+ * Author:             Franklin <https://frankl.in>
  * License:            Unlicense (public domain, see LICENSE file)
  * Source & docs:      <https://github.com/fvdm/nodejs-worldtides>
  * API documentation:  <https://www.worldtides.info/apidocs>
